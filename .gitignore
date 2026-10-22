@@ -218,3 +218,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Seus arquivos locais do Copiloto CyberSec
+venv/
+__pycache__/
+server.log
+forense.json
+quarentena/
+.env
+.copiloto_cybersec.lock
+whitelist.json
+
