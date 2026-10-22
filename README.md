@@ -127,7 +127,7 @@ Para fazer o Copiloto iniciar sozinho ao ligar o computador:
 
 
 
-INSTALAÇÃO NO WINDOWS
+
 
 
 # 🛡️ Copiloto CyberSec (Guia para Windows)
