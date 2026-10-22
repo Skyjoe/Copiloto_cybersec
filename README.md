@@ -48,12 +48,13 @@ O **Copiloto CyberSec** é uma solução EDR (*Endpoint Detection and Response*)
 ## 🛠️ Pré-requisitos e Dependências
 
 * **Python 3.10+** instalado no sistema.
-
-* **Tesseract-OCR** instalado (necessário para a função de OCR/análise de tela):
-
-  ```
-  sudo apt install tesseract-ocr tesseract-ocr-por
   
+* **Placa de Vídeo (GPU)** com pelo menos **8 GB de VRAM** (altamente recomendada para acelerar a inferência do Llama 3 via Vulkan/CUDA e garantir respostas rápidas do agente).
+  
+* **Tesseract-OCR** instalado (necessário para a função de OCR/análise de tela):
+  ```bash
+  sudo apt install tesseract-ocr tesseract-ocr-por
+
   ```
 
 * Um modelo **Llama 3 (.gguf)** configurado para rodar localmente com `llama-cpp-python` ou `llama.cpp`.
