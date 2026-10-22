@@ -97,7 +97,7 @@ O **Copiloto CyberSec** é uma solução EDR (*Endpoint Detection and Response*)
 
 ### Execução Manual
 
-Podes iniciar o servidor do Llama e o agente de monitoramento através do script de inicialização integrado:
+Pode iniciar o servidor do Llama e o agente de monitoramento através do script de inicialização integrado:
 
 ```
 ./iniciar_copiloto.sh
