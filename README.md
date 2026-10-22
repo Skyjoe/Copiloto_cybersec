@@ -44,6 +44,9 @@ O **Copiloto CyberSec** é uma solução EDR (*Endpoint Detection and Response*)
    * Interface limpa desenvolvida em `customtkinter` com modo escuro e sistema de abas.
 
    * Ícone vetorial estilizado em alta definição na bandeja do sistema (*System Tray*).
+  
+INSTALAÇÃO NO LINUX
+
 
 ## 🛠️ Pré-requisitos e Dependências
 
@@ -121,6 +124,78 @@ Para fazer o Copiloto iniciar sozinho ao ligar o computador:
    ```
 
 4. Guarda as alterações. O script encarregará de subir o servidor local e o EDR de forma sincronizada.
+
+
+
+INSTALAÇÃO NO WINDOWS
+
+
+# 🛡️ Copiloto CyberSec (Guia para Windows)
+
+O **Copiloto CyberSec** é uma solução EDR (*Endpoint Detection and Response*) local e open-source desenvolvida em Python. Este guia descreve como instalar e configurar a ferramenta em ambientes **Windows 10 / 11**.
+
+---
+
+## 🛠️ Pré-requisitos
+
+1. **Python 3.10+** instalado (Certifique-se de marcar a opção *"Add Python to PATH"* durante a instalação).
+2. **Placa de Vídeo (GPU)** com pelo menos **8 GB de VRAM** (altamente recomendada para performance da IA).
+3. **Tesseract-OCR para Windows**:
+   - Faça o download do instalador oficial para Windows (geralmente mantido pela UB-Mannheim no GitHub).
+   - Instale e adicione o caminho do Tesseract (ex: `C:\Program Files\Tesseract-OCR`) às Variáveis de Ambiente (PATH) do Windows.
+4. Um modelo **Llama 3 (.gguf)** guardado na pasta do projeto.
+5. Uma chave de API gratuita do **VirusTotal**.
+
+---
+
+## 📦 Instalação no Windows
+
+1. Abra o **Prompt de Comando (CMD)** ou **PowerShell** na pasta onde descompactou ou clonou o projeto.
+
+2. Crie e ative um ambiente virtual Python:
+   ```cmd
+   python -m venv venv
+   venv\Scripts\activate
+Instale as dependências utilizando o mesmo requirements.txt:
+
+DOS
+pip install -r requirements.txt
+Configure as variáveis de ambiente:
+
+Copie o arquivo de exemplo:
+
+DOS
+copy env.example .env
+Abra o arquivo .env gerado no Bloco de Notas e insira a sua chave do VirusTotal:
+
+Snippet de código
+VIRUSTOTAL_API_KEY=sua_chave_aqui
+🚀 Como Executar no Windows
+Execução com Script Automático (.bat)
+Criámos um script para automatizar a subida do servidor Llama e do EDR no Windows.
+
+Crie um arquivo chamado iniciar_copiloto.bat na pasta do projeto com o seguinte conteúdo:
+
+DOS
+@echo off
+cd /d %~dp0
+call venv\Scripts\activate
+start /b python -m llama_cpp.server --model .\Meta-Llama-3-8B-Instruct.Q4_K_M.gguf --n_gpu_layers -1 --host 127.0.0.1 --port 8000 > server.log 2>&1
+echo Iniciando o servidor Llama 3... Aguardando 40 segundos para carregamento...
+timeout /t 40 /nobreak > nul
+echo Iniciando o Copiloto CyberSec...
+python agente_monitor.py
+Para rodar, basta dar dois cliques no ficheiro iniciar_copiloto.bat.
+
+Inicialização Automática com o Windows
+Para que o Copiloto abra sozinho sempre que ligar o computador:
+
+Pressione as teclas Win + R, digite shell:startup e pressione Enter (isso abrirá a pasta de Inicialização do Windows).
+
+Clique com o botão direito em cima do seu ficheiro iniciar_copiloto.bat -> Enviar para -> Área de trabalho (criar atalho).
+
+Arraste esse atalho criado para dentro da pasta shell:startup que abriu no passo 1.
+
 
 ## 🤝 Contribuições
 
