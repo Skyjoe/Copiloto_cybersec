@@ -123,7 +123,7 @@ Para fazer o Copiloto iniciar sozinho ao ligar o computador:
 
 ## 🤝 Contribuições
 
-Contribuições, sugestões de melhorias e novas funcionalidades são sempre bem-vindas! Siste-te à vontade para abrir uma *Issue* ou enviar um *Pull Request*.
+Contribuições, sugestões de melhorias e novas funcionalidades são sempre bem-vindas! Sinta-se à vontade para abrir uma *Issue* ou enviar um *Pull Request*.
 
 ## 📜 Licença
 
